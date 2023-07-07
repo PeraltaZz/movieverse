@@ -1,0 +1,155 @@
+.movie-bg {
+  background-color: #141414;
+  padding: 60px 40px;
+}
+.movie-all {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: max-content auto;
+  gap: 40px;
+}
+
+.movie-img {
+  max-width: 300px;
+  max-height: 410px;
+}
+
+.movie-infos {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font: 400 1.33rem/1.25 "Roboto", sans-serif;
+}
+
+.main-infos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.title h1 {
+  font: 500 2rem/1.25 "Poppins", sans-serif;
+  color: #dfa822;
+}
+
+.imdb-style {
+  text-align: center;
+  background: linear-gradient(90deg, #ffb500 0%, #f5aa14 100%);
+  color: #000;
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+.score-style {
+  background-color: #fff;
+  color: #000;
+  border-radius: 4px;
+  padding: 4px 6px;
+}
+
+.movie-favorite-icon .icon {
+  width: 32px;
+  height: 32px;
+  align-self: end;
+}
+
+.genre-style {
+  text-align: center;
+  background: linear-gradient(90deg, #ffb500 0%, #f5aa14 100%);
+  padding: 4px 6px;
+  border-radius: 4px;
+  color: #000;
+}
+
+.runtime {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.language p {
+  color: #dfa822;
+}
+
+.language-style {
+  color: #fff;
+}
+
+.awards p {
+  color: #fff;
+}
+
+.awards-style {
+  color: #dfa822;
+}
+
+@media (max-width: 1024px) {
+  .movie-all {
+    grid-template-columns: 1fr;
+  }
+  .movie-img {
+    justify-self: center;
+  }
+}
+@media (max-width: 820px) {
+  .movie-favorite-icon .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .movie-infos {
+    font: 400 1.2rem/1.25 "Roboto", sans-serif;
+  }
+  .title h1 {
+    font: 500 1.8rem/1.25 "Poppins", sans-serif;
+    color: #dfa822;
+  }
+}
+
+@media (max-width: 620px) {
+  .title {
+    gap: 20px;
+  }
+  .runtime {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 530px) {
+  .movie-bg {
+    background-color: #141414;
+    padding: 40px 20px;
+  }
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .runtime {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .movie-img .poster-img {
+    max-width: 260px;
+    max-height: 355px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-infos {
+    font: 400 1rem/1.25 "Roboto", sans-serif;
+  }
+  .title h1 {
+    font: 500 1.5rem/1.25 "Poppins", sans-serif;
+    color: #dfa822;
+  }
+}
