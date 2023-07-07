@@ -14,11 +14,11 @@ export const Header = () => {
               width={279}
               height={38}
               priority
-              src="/logo.svg"
+              src="/movieverse.svg"
               alt={"Movie Verse Logo"}
             ></Image>
           </Link>
-          <Link className="hover-effect" href="/favorites-page">
+          <Link className="hover-effect" href="/favorite-pages">
             Favorites
           </Link>
         </nav>
