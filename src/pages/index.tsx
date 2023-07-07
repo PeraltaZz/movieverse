@@ -1,9 +1,13 @@
+import Head from "next/head";
 
-
-export default function Home() {
+const Home = () => {
   return (
     <>
-     
+      <Head>
+        <title>Home | MovieVerse</title>
+      </Head>
     </>
-  )
-}
+  );
+};
+
+export default Home;
