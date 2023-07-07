@@ -4,13 +4,14 @@ import Link from "next/link";
 export const Header = () => {
   return (
     <>
-      <header>
-        <nav>
+      <header className="header-bg">
+        <nav className="header-nav container">
           <Link className="hover-effect" href="/">
             Home
           </Link>
-          <Link className="hover-effect" href="/">
+          <Link className="hover-effect logo" href="/">
             <Image
+           className="logo-image"
               width={279}
               height={38}
               priority
