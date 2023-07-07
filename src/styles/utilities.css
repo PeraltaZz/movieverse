@@ -50,3 +50,20 @@
   border: none;
   cursor: pointer;
 }
+
+html,
+body,
+#root {
+  height: 100%;
+}
+.main-container {
+  display: flex; 
+  flex-direction: column;
+  min-height: 100vh; 
+  background-color: #0f0f0f;
+}
+
+.default-container {
+  flex: 1;
+  background-color: #141414;
+}
