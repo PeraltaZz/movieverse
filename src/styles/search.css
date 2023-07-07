@@ -1,0 +1,104 @@
+.search-bg {
+  background-color: #0f0f0f;
+}
+
+.search-container {
+  padding: 100px 40px;
+  position: relative;
+}
+
+.search-input {
+  min-width: 460px;
+  height: 48px;
+  padding: 20px;
+  font: 400 1.25rem/1.25 "Poppins", sans-serif;
+  text-transform: capitalize;
+  border: 2px solid transparent;
+  outline: none;
+}
+
+.search-input:focus {
+  border: 2px solid #dfa822;
+}
+
+.search-list {
+  min-width: 460px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 208px;
+  max-height: 300px;
+  overflow-x: auto;
+}
+
+.search-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 452px;
+  background-color: #1f1f1f;
+  border-bottom: 2px solid #0f0f0f;
+  padding: 20px 30px;
+  cursor: pointer;
+}
+
+.search-list-item:hover {
+  background-color: #151515;
+}
+
+.search-list-item-img img {
+  max-width: 50px;
+  max-height: 74px;
+}
+
+.search-list-item-icon:hover {
+  scale: 1.1;
+}
+
+@media (max-width: 520px) {
+  .search-container {
+    padding: 40px 20px;
+    
+  }
+  .search-input {
+    min-width: 400px;
+  }
+  .search-list {
+    min-width: 400px;
+
+    max-height: 200px;
+  }
+
+  .search-list-item {
+    width: 392px;
+  }
+}
+
+@media (max-width: 420px) {
+  .search-input {
+    min-width: 320px;
+  }
+  .search-list {
+    min-width: 320px;
+  }
+
+  .search-list-item {
+    width: 312px;
+  }
+}
+
+@media (max-width: 320px) {
+  .search-input {
+    max-width: 280px;
+    min-width: 280px;
+  }
+  .search-list {
+    max-width: 280px;
+    min-width: 280px;
+  }
+  .search-list-item {
+    width: 272px;
+  }
+  
+}
