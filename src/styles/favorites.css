@@ -1,0 +1,27 @@
+.favorites {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .favorite-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .see-more-button {
+    margin-bottom: 40px;
+  }
+  
+  .favorite-bg {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #0f0f0f;
+  }
+
+  .favorite-all{
+    border-bottom: 3px solid #000;
+  }
+  
