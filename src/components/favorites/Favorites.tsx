@@ -71,7 +71,12 @@ const Favorites: React.FC = () => {
           key={index}
         >
           <div className="favorite-img">
-            <Image width={260} height={355} src={movie.Poster} alt="" />
+            <Image
+              width={260}
+              height={355}
+              src={movie.Poster !== "N/A" ? movie.Poster : "/placeholder.jpg"}
+              alt=""
+            />
           </div>
           <div className="favorites d-flex column justify-content-between ">
             <div className="movie-infos  d-flex column g-20">
@@ -99,7 +104,7 @@ const Favorites: React.FC = () => {
                   </p>
                 </div>
                 <div className="genre">
-                  <p>
+                  <p className="">
                     Genre: <span className="genre-style">{movie.Genre}</span>
                   </p>
                 </div>

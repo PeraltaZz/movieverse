@@ -50,10 +50,8 @@
   color: #fff;
 }
 
-html,
-body,
-#root {
-  height: 100%;
+.icon{
+  cursor: pointer;
 }
 
 .main-container {
