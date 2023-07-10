@@ -23,8 +23,6 @@
 
 .search-list {
   min-width: 460px;
-  display: flex;
-  flex-direction: column;
   position: absolute;
   top: 208px;
   max-height: 300px;
@@ -32,10 +30,6 @@
 }
 
 .search-list-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
   width: 452px;
   background-color: #1f1f1f;
   border-bottom: 2px solid #0f0f0f;
@@ -66,13 +60,14 @@
   }
   .search-list {
     min-width: 400px;
-
     max-height: 200px;
+    top: 138px;
   }
 
   .search-list-item {
     width: 392px;
   }
+  
 }
 
 @media (max-width: 420px) {

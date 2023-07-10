@@ -3,11 +3,7 @@
   padding: 60px 40px;
 }
 .movie-all {
-  display: grid;
-  justify-content: center;
-  align-items: center;
   grid-template-columns: max-content auto;
-  gap: 40px;
 }
 
 .movie-img {
@@ -17,27 +13,7 @@
 
 .movie-infos {
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   font: 400 1.33rem/1.25 "Roboto", sans-serif;
-}
-
-.main-infos {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.title {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.title h1 {
-  font: 500 2rem/1.25 "Poppins", sans-serif;
-  color: #dfa822;
 }
 
 .imdb-style {
@@ -67,12 +43,6 @@
   padding: 4px 6px;
   border-radius: 4px;
   color: #000;
-}
-
-.runtime {
-  display: flex;
-  align-items: center;
-  gap: 40px;
 }
 
 .language p {
@@ -107,10 +77,6 @@
 
   .movie-infos {
     font: 400 1.2rem/1.25 "Roboto", sans-serif;
-  }
-  .title h1 {
-    font: 500 1.8rem/1.25 "Poppins", sans-serif;
-    color: #dfa822;
   }
 }
 
@@ -147,9 +113,5 @@
 @media (max-width: 480px) {
   .movie-infos {
     font: 400 1rem/1.25 "Roboto", sans-serif;
-  }
-  .title h1 {
-    font: 500 1.5rem/1.25 "Poppins", sans-serif;
-    color: #dfa822;
   }
 }

@@ -2,7 +2,6 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import FavoriteIcon from "../commons/FavoriteIcon";
 
-
 interface Movie {
   imdbID: string;
   Title: string;
@@ -45,7 +44,7 @@ const SearchList: React.FC<SearchListProps> = ({
   }, [movieTitle]);
 
   return (
-    <ul className="search-list">
+    <ul className="search-list d-flex column">
       {focus && !isLoading && movies.length > 0
         ? movies.map((movie) => {
             const posterUrl =
@@ -53,10 +52,10 @@ const SearchList: React.FC<SearchListProps> = ({
             return (
               <li
                 key={movie.imdbID}
-                className="search-list-item"
+                className="search-list-item d-flex justify-content-between align-items-center g-20"
                 onClick={() => onMovieClick(movie.imdbID)}
               >
-                <div className="search-list-item-content d-flex g-20">
+                <div className="search-list-item-content d-flex justify-content-center align-items-center g-20">
                   <div className="search-list-item-img">
                     <Image
                       width={50}

@@ -4,9 +4,6 @@
 
 .header-nav {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   font: 400 1.5rem/1.25 "Poppins", sans-serif;
   color: #fff;
 }
@@ -14,34 +11,25 @@
 .hover-effect:hover {
   color: #dfa822;
 }
-.logo{
-    width: max-content;
-    display: flex;
-    justify-content: center;
-}
 
 @media (max-width: 760px) {
-    .header-nav {
-      font: 400 1.25rem/1.25 "Poppins", sans-serif;
-    }
-    .logo-image{
-        width: 80%;
-    }
+  .header-nav {
+    font: 400 1.25rem/1.25 "Poppins", sans-serif;
   }
-  
-  @media (max-width: 520px) {
-    .header-nav {
-      font: 400 1rem/1.25 "Poppins", sans-serif;
-      padding: 20px;
-    }
-   
+  .logo-image {
+    width: 80%;
   }
-  
-  
-  @media (max-width: 360px) {
-    .header-nav {
-      font: 400 0.875rem/1.25 "Poppins", sans-serif;
-    }
-   
+}
+
+@media (max-width: 520px) {
+  .header-nav {
+    font: 400 1rem/1.25 "Poppins", sans-serif;
+    padding: 20px;
   }
-  
+}
+
+@media (max-width: 360px) {
+  .header-nav {
+    font: 400 0.875rem/1.25 "Poppins", sans-serif;
+  }
+}

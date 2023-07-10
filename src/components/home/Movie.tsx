@@ -41,14 +41,15 @@ const Movie: React.FC<MovieProps> = ({ movieKey }) => {
   if (!movieData) {
     return null;
   }
-  const posterUrl = movieData.Poster !== "N/A" ? movieData.Poster : "/placeholder.jpg";
+  const posterUrl =
+    movieData.Poster !== "N/A" ? movieData.Poster : "/placeholder.jpg";
 
   return (
     <section className="movie-bg">
-      <div className="movie-all container">
+      <div className="movie-all container d-grid justify-content-center align-items-center g-40">
         <div className="movie-img">
           <Image
-          className="poster-img"
+            className="poster-img"
             width={300}
             height={410}
             unoptimized
@@ -56,10 +57,10 @@ const Movie: React.FC<MovieProps> = ({ movieKey }) => {
             alt={movieData.Title}
           />
         </div>
-        <div className="movie-infos">
-          <div className="main-infos">
-            <div className="title">
-              <h1>{movieData.Title}</h1>
+        <div className="movie-infos d-flex column g-20">
+          <div className="main-infos d-flex justify-content-between align-items-center">
+            <div className="title d-flex align-items-center g-40">
+              <h1 className="font-large">{movieData.Title}</h1>
               <p>
                 <span className="imdb-style">IMDb:</span>{" "}
                 <span className="score-style">{movieData.imdbRating}</span>
@@ -69,7 +70,7 @@ const Movie: React.FC<MovieProps> = ({ movieKey }) => {
               <FavoriteIcon movieKey={movieKey} />
             </div>
           </div>
-          <div className="runtime">
+          <div className="runtime d-flex align-items-center g-40">
             <p>
               Runtime:{" "}
               <span className="runtime-style">{movieData.Runtime}</span>
