@@ -24,11 +24,7 @@ const FavoriteIcon: React.FC<FavoriteIconProps> = ({ movieKey }) => {
       const parsedFavorites = favorites ? JSON.parse(favorites) : {};
       const updatedFavorites = { ...parsedFavorites };
 
-      if (prevIsFavorite) {
-        delete updatedFavorites[movieKey];
-      } else {
-        updatedFavorites[movieKey] = true;
-      }
+      prevIsFavorite ? delete updatedFavorites[movieKey] : (updatedFavorites[movieKey] = true);
 
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
       return !prevIsFavorite;
@@ -38,9 +34,21 @@ const FavoriteIcon: React.FC<FavoriteIconProps> = ({ movieKey }) => {
   return (
     <div className="search-list-item-icon" onClick={toggleFavorite}>
       {isFavorite ? (
-        <Image className="icon" src={StarFill} alt="Favorite Icon" width={20} height={20} />
+        <Image
+          className="icon"
+          src={StarFill}
+          alt="Favorite Icon"
+          width={20}
+          height={20}
+        />
       ) : (
-        <Image className="icon" src={Star} alt="Favorite Icon" width={20} height={20} />
+        <Image
+          className="icon"
+          src={Star}
+          alt="Favorite Icon"
+          width={20}
+          height={20}
+        />
       )}
     </div>
   );
