@@ -23,16 +23,7 @@ const Favorites: React.FC = () => {
         );
 
         const movieData = await response.json();
-        const movie = {
-          Poster: movieData.Poster,
-          Title: movieData.Title,
-          imdbRating: movieData.imdbRating,
-          Runtime: movieData.Runtime,
-          Released: movieData.Released,
-          Genre: movieData.Genre,
-          imdbID: movieData.imdbID,
-        };
-        return movie;
+        return movieData;
       } catch (error) {
         console.error(`Erro ao buscar dados do filme com ID ${movieKey}:`);
       }

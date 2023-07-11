@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import FavoriteIcon from "../commons/FavoriteIcon";
 
-interface Movie {
+interface MoviesData {
   imdbID: string;
   Title: string;
   Year: string;
@@ -20,8 +20,7 @@ const SearchList: React.FC<SearchListProps> = ({
   focus,
   onMovieClick,
 }) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [moviesData, setMoviesData] = useState<MoviesData[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,12 +30,10 @@ const SearchList: React.FC<SearchListProps> = ({
         );
         const data = await response.json();
         if (data && data.Search) {
-          setMovies(data.Search);
+          setMoviesData(data.Search);
         }
       } catch (error) {
         console.log("Error fetching movie data:", error);
-      } finally {
-        setIsLoading(false);
       }
     };
 
@@ -44,11 +41,10 @@ const SearchList: React.FC<SearchListProps> = ({
   }, [movieTitle]);
 
   return (
-    <ul className="search-list d-flex column">
-      {focus && !isLoading && movies.length > 0
-        ? movies.map((movie) => {
-            const posterUrl =
-              movie.Poster !== "N/A" ? movie.Poster : "/placeholder.jpg";
+    <>
+      {focus && moviesData.length > 0 ? (
+        <ul className="search-list d-flex column">
+          {moviesData.map((movie) => {
             return (
               <li
                 key={movie.imdbID}
@@ -60,7 +56,11 @@ const SearchList: React.FC<SearchListProps> = ({
                     <Image
                       width={50}
                       height={74}
-                      src={posterUrl}
+                      src={
+                        movie.Poster !== "N/A"
+                          ? movie.Poster
+                          : "/placeholder.jpg"
+                      }
                       alt={movie.Title}
                     />
                   </div>
@@ -74,9 +74,10 @@ const SearchList: React.FC<SearchListProps> = ({
                 </div>
               </li>
             );
-          })
-        : null}
-    </ul>
+          })}
+        </ul>
+      ) : null}
+    </>
   );
 };
 
