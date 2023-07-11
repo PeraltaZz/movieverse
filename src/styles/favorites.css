@@ -12,6 +12,11 @@
   width: 90%;
 }
 
+.default-message {
+  height: 100vh;
+  text-align: center;
+}
+
 @media (max-width: 1024px) {
   .favorite-img img {
     width: 220px;

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
+
 import FavoriteIcon from "../commons/FavoriteIcon";
 
 interface Movie {
@@ -53,54 +54,60 @@ const Favorites: React.FC = () => {
 
   return (
     <div className="favorite-bg d-flex column g-20">
-      {movies.map((movie) => (
-        <div
-          className="favorite-all container d-grid align-items-center g-40"
-          key={movie.imdbID}
-        >
-          <div className="favorite-img">
-            <Image
-              width={260}
-              height={355}
-              src={movie.Poster !== "N/A" ? movie.Poster : "/placeholder.jpg"}
-              alt=""
-            />
-          </div>
-          <div className="favorites d-flex column justify-content-between ">
-            <div className="movie-infos  d-flex column g-20">
-              <div className="main-infos">
-                <div className="d-flex justify-content-between align-items-center ">
-                  <h1 className="font-large">{movie.Title}</h1>
-                  <div className="movie-favorite-icon">
-                    <FavoriteIcon movieKey={movie.imdbID} />
+      {movies.length > 0 ? (
+        movies.map((movie) => (
+          <div
+            className="favorite-all container d-grid align-items-center g-40"
+            key={movie.imdbID}
+          >
+            <div className="favorite-img">
+              <Image
+                width={260}
+                height={355}
+                src={movie.Poster !== "N/A" ? movie.Poster : "/placeholder.jpg"}
+                alt=""
+              />
+            </div>
+            <div className="favorites d-flex column justify-content-between ">
+              <div className="movie-infos  d-flex column g-20">
+                <div className="main-infos">
+                  <div className="d-flex justify-content-between align-items-center ">
+                    <h1 className="font-large">{movie.Title}</h1>
+                    <div className="movie-favorite-icon">
+                      <FavoriteIcon movieKey={movie.imdbID} />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <p>
-                <span className="imdb-style">IMDb:</span>{" "}
-                <span className="score-style">{movie.imdbRating}</span>
-              </p>
-              <div className="favorite-infos d-flex column g-20">
-                <div className="runtime d-flex align-items-center g-40">
-                  <p>
-                    Runtime:{" "}
-                    <span className="runtime-style">{movie.Runtime}</span>
-                  </p>
-                  <p>
-                    Released:{" "}
-                    <span className="release-style">{movie.Released}</span>
-                  </p>
-                </div>
-                <div className="genre">
-                  <p className="">
-                    Genre: <span className="genre-style">{movie.Genre}</span>
-                  </p>
+                <p>
+                  <span className="imdb-style">IMDb:</span>{" "}
+                  <span className="score-style">{movie.imdbRating}</span>
+                </p>
+                <div className="favorite-infos d-flex column g-20">
+                  <div className="runtime d-flex align-items-center g-40">
+                    <p>
+                      Runtime:{" "}
+                      <span className="runtime-style">{movie.Runtime}</span>
+                    </p>
+                    <p>
+                      Released:{" "}
+                      <span className="release-style">{movie.Released}</span>
+                    </p>
+                  </div>
+                  <div className="genre">
+                    <p className="">
+                      Genre: <span className="genre-style">{movie.Genre}</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        ))
+      ) : (
+        <div className="default-message d-flex column g-20 justify-content-center align-items-center font-large">
+          You have not added any movies to your favorites yet
         </div>
-      ))}
+      )}
     </div>
   );
 };
