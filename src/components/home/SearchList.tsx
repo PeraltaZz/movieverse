@@ -15,11 +15,7 @@ interface SearchListProps {
   onMovieClick: (imdbID: string) => void;
 }
 
-const SearchList: React.FC<SearchListProps> = ({
-  movieTitle,
-  focus,
-  onMovieClick,
-}) => {
+const SearchList = ({ movieTitle, focus, onMovieClick }: SearchListProps) => {
   const [moviesData, setMoviesData] = useState<MoviesData[]>([]);
 
   useEffect(() => {

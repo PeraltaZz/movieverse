@@ -13,7 +13,7 @@ interface Movie {
   imdbID: string;
 }
 
-const Favorites: React.FC = () => {
+const Favorites = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
 
   const fetchMoviesData = async (movieKeys: string[]) => {

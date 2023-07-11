@@ -5,7 +5,7 @@ interface SearchProps {
   onMovieClick: (movieKey: string) => void;
 }
 
-const Search: React.FC<SearchProps> = ({ onMovieClick }) => {
+const Search = ({ onMovieClick }: SearchProps) => {
   const [searchMovie, setSearchMovie] = useState("");
   const [isInputFocused, setIsInputFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);

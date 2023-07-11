@@ -19,7 +19,7 @@ interface MovieProps {
   movieKey: string;
 }
 
-const Movie: React.FC<MovieProps> = ({ movieKey }) => {
+const Movie = ({ movieKey }: MovieProps) => {
   const [movieData, setMovieData] = useState<MovieData | null>(null);
 
   useEffect(() => {
