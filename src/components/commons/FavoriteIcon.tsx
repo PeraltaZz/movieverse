@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Star from 'public/star.svg';
-import StarFill from 'public/starfill.svg';
 
 interface FavoriteIconProps {
   movieKey: string;
@@ -24,7 +22,9 @@ const FavoriteIcon: React.FC<FavoriteIconProps> = ({ movieKey }) => {
       const parsedFavorites = favorites ? JSON.parse(favorites) : {};
       const updatedFavorites = { ...parsedFavorites };
 
-      prevIsFavorite ? delete updatedFavorites[movieKey] : (updatedFavorites[movieKey] = true);
+      prevIsFavorite
+        ? delete updatedFavorites[movieKey]
+        : (updatedFavorites[movieKey] = true);
 
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
       return !prevIsFavorite;
@@ -36,7 +36,7 @@ const FavoriteIcon: React.FC<FavoriteIconProps> = ({ movieKey }) => {
       {isFavorite ? (
         <Image
           className="icon"
-          src={StarFill}
+          src="/starfill.svg"
           alt="Favorite Icon"
           width={20}
           height={20}
@@ -44,7 +44,7 @@ const FavoriteIcon: React.FC<FavoriteIconProps> = ({ movieKey }) => {
       ) : (
         <Image
           className="icon"
-          src={Star}
+          src="/star.svg"
           alt="Favorite Icon"
           width={20}
           height={20}
