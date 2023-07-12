@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Star from "../../../public/star.svg";
-import StarFill from "../../../public/starfill.svg";
+import Star from 'public/star.svg';
+import StarFill from 'public/starfill.svg';
 
 interface FavoriteIconProps {
   movieKey: string;
