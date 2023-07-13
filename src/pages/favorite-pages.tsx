@@ -1,5 +1,5 @@
 
-import Favorites from "@/components/favorites/Favorites";
+import {Favorites} from "@/components/favorites/Favorites";
 import Head from "next/head";
 
 

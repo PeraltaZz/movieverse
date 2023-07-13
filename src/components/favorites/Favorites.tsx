@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import FavoriteIcon from "../commons/FavoriteIcon";
+import {FavoriteIcon} from "../commons/FavoriteIcon";
 
 interface Movie {
   Poster: string;
@@ -13,7 +13,7 @@ interface Movie {
   imdbID: string;
 }
 
-const Favorites = () => {
+export const Favorites = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -120,4 +120,4 @@ const Favorites = () => {
   );
 };
 
-export default Favorites;
+

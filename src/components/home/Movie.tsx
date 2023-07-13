@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import FavoriteIcon from "../commons/FavoriteIcon";
+import {FavoriteIcon} from "../commons/FavoriteIcon";
 
 interface MovieData {
   Poster: string;
@@ -19,7 +19,7 @@ interface MovieProps {
   movieKey: string;
 }
 
-const Movie = ({ movieKey }: MovieProps) => {
+export const Movie = ({ movieKey }: MovieProps) => {
   const [movieData, setMovieData] = useState<MovieData | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -130,4 +130,4 @@ const Movie = ({ movieKey }: MovieProps) => {
   );
 };
 
-export default Movie;
+

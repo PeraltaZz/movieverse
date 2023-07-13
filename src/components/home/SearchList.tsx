@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import FavoriteIcon from "../commons/FavoriteIcon";
+import {FavoriteIcon} from "../commons/FavoriteIcon";
 
 interface MoviesData {
   imdbID: string;
@@ -15,7 +15,7 @@ interface SearchListProps {
   onMovieClick: (imdbID: string) => void;
 }
 
-const SearchList = ({ movieTitle, focus, onMovieClick }: SearchListProps) => {
+ export const SearchList = ({ movieTitle, focus, onMovieClick }: SearchListProps) => {
   const [moviesData, setMoviesData] = useState<MoviesData[]>([]);
 
   useEffect(() => {
@@ -77,4 +77,4 @@ const SearchList = ({ movieTitle, focus, onMovieClick }: SearchListProps) => {
   );
 };
 
-export default SearchList;
+

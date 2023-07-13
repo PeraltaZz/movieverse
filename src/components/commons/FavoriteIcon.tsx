@@ -5,7 +5,7 @@ interface FavoriteIconProps {
   movieKey: string;
 }
 
-const FavoriteIcon: React.FC<FavoriteIconProps> = ({ movieKey }) => {
+export const FavoriteIcon = ({ movieKey }: FavoriteIconProps) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
@@ -54,4 +54,4 @@ const FavoriteIcon: React.FC<FavoriteIconProps> = ({ movieKey }) => {
   );
 };
 
-export default FavoriteIcon;
+

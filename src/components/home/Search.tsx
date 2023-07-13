@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef, ChangeEvent } from "react";
-import SearchList from "./SearchList";
+import {SearchList} from "./SearchList";
 
 interface SearchProps {
   onMovieClick: (movieKey: string) => void;
 }
 
-const Search = ({ onMovieClick }: SearchProps) => {
+export const Search = ({ onMovieClick }: SearchProps) => {
   const [searchMovie, setSearchMovie] = useState("");
   const [isInputFocused, setIsInputFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -64,4 +64,3 @@ const Search = ({ onMovieClick }: SearchProps) => {
   );
 };
 
-export default Search;

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Search from "@/components/home/Search";
-import Movie from "@/components/home/Movie";
+import {Search} from "@/components/home/Search";
+import {Movie} from "@/components/home/Movie";
 import Head from "next/head";
 
 const Home = () => {
