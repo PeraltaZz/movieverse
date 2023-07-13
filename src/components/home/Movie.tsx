@@ -21,13 +21,16 @@ interface MovieProps {
 
 const Movie = ({ movieKey }: MovieProps) => {
   const [movieData, setMovieData] = useState<MovieData | null>(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchMovieData = async () => {
+      setMovieData(null)
       try {
         if (!movieKey) {
           return;
         }
+        setLoading(true);
         const response = await fetch(
           `https://www.omdbapi.com/?i=${movieKey}&apikey=5862fd8f`
         );
@@ -35,6 +38,11 @@ const Movie = ({ movieKey }: MovieProps) => {
         setMovieData(data);
       } catch (error) {
         console.log("Error fetching movie data:", error);
+      } finally {
+        
+        setTimeout(() => {
+          setLoading(false);
+        }, 500);
       }
     };
 
@@ -42,9 +50,10 @@ const Movie = ({ movieKey }: MovieProps) => {
   }, [movieKey]);
 
   return (
-    <div className="default-container">
-      {movieData ? (
-        <section className="movie-bg">
+    <div className="default-container ">
+    {loading && <div className="c-loader"></div>}
+      {movieData && !loading ? (
+        <section className="movie-bg appear-animation">
           <div className="movie-all container d-grid justify-content-center align-items-center g-40">
             <div className="movie-img">
               <Image
@@ -61,7 +70,7 @@ const Movie = ({ movieKey }: MovieProps) => {
               />
             </div>
             <div className="movie-infos d-flex column g-20">
-              <div className="main-infos d-flex justify-content-between align-items-center">
+              <div className="main-infos d-flex justify-content-between align-items-center g-20">
                 <div className="title d-flex align-items-center g-40">
                   <h1 className="font-large">{movieData.Title}</h1>
                   <p>
