@@ -16,6 +16,10 @@
   font: 400 1.33rem/1.25 "Roboto", sans-serif;
 }
 
+.title h1{
+  max-width: 600px;
+}
+
 .imdb-style {
   text-align: center;
   background: linear-gradient(90deg, #ffb500 0%, #f5aa14 100%);
