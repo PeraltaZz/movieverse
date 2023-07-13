@@ -9,7 +9,6 @@ const Search = ({ onMovieClick }: SearchProps) => {
   const [searchMovie, setSearchMovie] = useState("");
   const [isInputFocused, setIsInputFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const searchListRef = useRef<HTMLDivElement>(null);
 
   const searchChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchMovie(event.target.value);
@@ -20,15 +19,10 @@ const Search = ({ onMovieClick }: SearchProps) => {
   };
 
   const handleClick = (event: MouseEvent) => {
-    if (
-      (inputRef.current && inputRef.current.contains(event.target as Node)) ||
-      (searchListRef.current &&
-        searchListRef.current.contains(event.target as Node))
-    ) {
+    if (inputRef.current && inputRef.current.contains(event.target as Node)) {
       setIsInputFocused(true);
       return;
     }
-
     setIsInputFocused(false);
   };
 
@@ -58,10 +52,7 @@ const Search = ({ onMovieClick }: SearchProps) => {
           />
         </form>
 
-        <div
-          className="d-flex column justify-content-center align-items-center"
-          ref={searchListRef}
-        >
+        <div className="d-flex column justify-content-center align-items-center">
           <SearchList
             movieTitle={searchMovie}
             focus={isInputFocused}
