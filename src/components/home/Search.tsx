@@ -6,7 +6,7 @@ interface SearchProps {
 }
 
 export const Search = ({ onMovieClick }: SearchProps) => {
-  const [searchMovie, setSearchMovie] = useState("");
+  const [searchMovie, setSearchMovie] = useState<string>("");
   const [isInputFocused, setIsInputFocused] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
