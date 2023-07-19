@@ -4,7 +4,7 @@ import {Movie} from "@/components/home/Movie";
 import Head from "next/head";
 
 const Home = () => {
-  const [selectedMovieKey, setSelectedMovieKey] = useState("");
+  const [selectedMovieKey, setSelectedMovieKey] = useState<string>("");
 
 
   const onMovieClick = (movieKey: string) => {
