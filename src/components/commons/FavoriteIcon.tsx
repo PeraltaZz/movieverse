@@ -32,12 +32,16 @@ export const FavoriteIcon = ({ movieKey }: FavoriteIconProps) => {
   };
 
   return (
-    <div className="search-list-item-icon" onClick={toggleFavorite}>
+    <div
+      className="search-list-item-icon"
+      onClick={toggleFavorite}
+      data-testid="favorite-icon"
+    >
       {isFavorite ? (
         <Image
           className="icon"
           src="/starfill.svg"
-          alt="Favorite Icon"
+          alt="Marked Favorite"
           width={20}
           height={20}
         />
@@ -45,7 +49,7 @@ export const FavoriteIcon = ({ movieKey }: FavoriteIconProps) => {
         <Image
           className="icon"
           src="/star.svg"
-          alt="Favorite Icon"
+          alt="Unmarked Favorite"
           width={20}
           height={20}
         />
@@ -53,5 +57,3 @@ export const FavoriteIcon = ({ movieKey }: FavoriteIconProps) => {
     </div>
   );
 };
-
-
